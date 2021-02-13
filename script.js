@@ -101,10 +101,46 @@
 
 // console.log(document.querySelector('[data-current="3"]').nextElementSibling);
 
-for (let node of document.body.childNodes) {
-    if (node.nodeName == '#text') {
-        continue;
-    }
+// for (let node of document.body.childNodes) {
+//     if (node.nodeName == '#text') {
+//         continue;
+//     }
 
-    console.log(node);
-}
+//     console.log(node);
+// };
+
+//СОБЫТИЯ НА МОБИЛЬНЫХ ТЕЛЕФОНАХ
+
+//touchstart
+//touchmove
+//touchend
+//touchenter
+//touchleave
+//touchcancel
+
+window.addEventListener('DOMContentLoaded', () => {
+    const box = document.querySelector('.box');
+
+    box.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+
+        console.log('Start');
+        console.log(e.targetTouches);
+    });
+
+    box.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+
+        console.log(e.targetTouches[0].pageX);
+    });
+
+    // box.addEventListener('touchend', (e) => {
+    //     e.preventDefault();
+
+    //     console.log('End')
+    // });
+});
+
+// touches
+// targetTouches
+// changedTouches
